@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
+import Search from "./pages/Search";
+import View from "./pages/View";
 import Nav from "./components/Nav";
 
 function App() {
@@ -12,13 +11,10 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path={["/", "/books"]}>
-            <Books />
+            <Search />
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
-          </Route>
-          <Route>
-            <NoMatch />
+          <Route exact path="/view">
+            <View />
           </Route>
         </Switch>
       </div>
