@@ -3,7 +3,10 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const routes = requre("./routes")
+const routes = require("./routes");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,13 +17,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use(routes);
+//app.use(routes);
 // Send every other request to the React app
 // Define any API routes before this runs
-mongoose.connect(`mongodb+srv://Mlanglois:${process.env.DB_PASS}@cluster0.oy7eo.mongodb.net/googlebooks?retryWrites=true&w=majority`,(err)=>{
-  if(err) throw err;
-  console.log("DB Connected Successfully");
-  });
+
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',(err)=>{
+    if(err) throw err;
+    console.log("DBConnectedSuccessfully");
+    })
+
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
