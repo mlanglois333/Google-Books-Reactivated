@@ -10,11 +10,7 @@ import Card from "../components/Card";
 
 function Search(){
 
-handleSubmit = event=>{
-    event.preventDefault();
-    console.log("clicked");
 
-}
 
 return (
     <Container>
