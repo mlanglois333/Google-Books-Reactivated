@@ -7,6 +7,7 @@ function Card(props) {
         <h2>{props.header}</h2>
       </div>
       <div className="card-body">{props.detail}</div>
+  <div>{props.button}</div>
     </div>
   );
 }

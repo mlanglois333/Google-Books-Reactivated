@@ -10,5 +10,15 @@ export default {
 
     search: function(title){
         return axios.get(apiUrl + title + apiKey)
+    },
+
+    getBooks: function(){
+        return axios.get("/api/books");
+    },
+    saveBook: function(bookData){
+        return axios.post("/api/books", bookData);
+    },
+    deleteBook: function(id) {
+        return axios.delete("/api/books/" + id);
     }
 };

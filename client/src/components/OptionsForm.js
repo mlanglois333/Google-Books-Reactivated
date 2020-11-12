@@ -5,7 +5,7 @@ function OptionsForm(props) {
         <div>
             <h3>Search By Title</h3>
             <br></br>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={props.onClick}>
                 
 
                 <input type="text" id="searchVal"></input>
