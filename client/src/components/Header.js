@@ -13,7 +13,7 @@ function Header(props) {
                         <a className="nav-link" href="/" onClick={props.search}>Search</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/" onClick={props.view}>View</a>
+                        <a className="nav-link" href="/view" onClick={props.view}>View</a>
                     </li>
                 </ul>
             </div>
