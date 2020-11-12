@@ -73,7 +73,7 @@ else {return (
                 link={this.state.result.infoLink}
                 image={this.state.result.imageLinks.thumbnail} />
                 }
-                button={<Button fcn={this.addBook} />} 
+                button={<Button fcn={this.addBook} label="Add To Database" />} 
                 />
             </Col>
         </Row>
