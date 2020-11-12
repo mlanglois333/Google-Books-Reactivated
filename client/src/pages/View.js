@@ -18,7 +18,6 @@ class View extends Component {
 
     componentDidMount = () => {
         this.loadBooks();
-        console.log(this.state.result);
 
     }
 
@@ -34,6 +33,10 @@ class View extends Component {
         .catch(err => console.log(err));
     }
 
+    cLog=()=>{
+        console.log(this.value);
+    }
+
     render() {
 
         if (this.state.isLoading === true) {
@@ -46,6 +49,7 @@ class View extends Component {
             )
         }
         else if (this.state.isLoading === false) {
+            console.log(this.state.result);
             return (
 
                 <Container>
@@ -63,7 +67,7 @@ class View extends Component {
                                 description={res.description}
                                 link={res.link}
                                 image={res.image} />}
-                                button={<Button fcn={this.deleteBook}>Remove from List</Button>}
+                                button={<Button fcn={()=>this.deleteBook(res._id)} label="Remove from Saved" val={res._id}/>}
                                  />
                         ))} />
                     </Row>
