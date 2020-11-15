@@ -23,10 +23,15 @@ app.use(routes);
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',(err)=>{
-    if(err) throw err;
-    console.log("DBConnectedSuccessfully");
-    })
+  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 
 app.listen(PORT, () => {
