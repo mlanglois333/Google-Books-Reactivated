@@ -8,10 +8,12 @@ import API from "../utils/API";
 import Book from "../components/Book";
 import Button from "../components/Button";
 
+
 class Search extends Component{
 
     state= {
-        result: undefined
+        result: undefined,
+        added: false
     };
 
 componentDidMount(){
@@ -24,8 +26,9 @@ handleSubmit =event =>{
     event.preventDefault();
     console.log(event.target.searchVal.value);
     let title = event.target.searchVal.value;
-    API.search(title).then(res => this.setState({result:res.data.items[0].volumeInfo}))
-    .catch(err => console.log(err));                                    
+    API.search(title).then(res => this.setState({result:res.data.items[0].volumeInfo, added:false}))
+    .catch(err => console.log(err));
+                                 
 
 };
 
@@ -38,7 +41,7 @@ addBook=event=>{
                 link:this.state.result.infoLink,
                 image:this.state.result.imageLinks.thumbnail
 
-    }).then(res=> console.log("saved" + res))
+    }).then(res=> this.setState({added:true}))
     .catch(err=>console.log(err));
 
 
@@ -59,7 +62,8 @@ return (
         </Row>
     </Container>
 )}
-else {return (
+else if (this.state.result !== undefined && this.state.added === false) 
+{return (
     <Container>
         <Row>
             <Col size="sm-12">
@@ -82,6 +86,24 @@ else {return (
         </Row>
     </Container>
 )}
+else {
+    return (
+        <Container>
+            <Row>
+                <Col size="sm-12">
+                    <h3>
+                        {this.state.result.title} has been added!
+                    </h3>
+                </Col>
+            </Row>
+            <Row>
+                <Col size="md-12">
+                <Card detail={<OptionsForm onClick={this.handleSubmit} />} /> 
+                </Col>
+            </Row>
+        </Container>
+    )
+}
 
 }
 }
