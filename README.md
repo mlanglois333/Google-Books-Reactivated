@@ -15,7 +15,6 @@ Technologies used:
 <li>React </li>
 <li> MongoDB Atlas</li>
 <li> Mongoose</li>
-<li> React</li>
 <li>Node </li>
 <li>Express </li>
 <li>Axios </li>
