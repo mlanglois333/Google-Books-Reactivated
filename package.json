@@ -33,5 +33,13 @@
     "popper.js": "^1.16.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlanglois333/Google-Books-Reactivated.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlanglois333/Google-Books-Reactivated/issues"
+  },
+  "homepage": "https://github.com/mlanglois333/Google-Books-Reactivated#readme"
 }
