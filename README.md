@@ -19,4 +19,4 @@ Technologies used:
 <li>Express </li>
 <li>Axios </li>
 
-### Marc Langlois || 2020 || UNH Coding Bootcamp
+### Marc Langlois || 2020 ||  MIT License
